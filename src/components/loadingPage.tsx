@@ -13,7 +13,7 @@ function LoadingPage() {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image
-        source={require('./assets/images/logo.jpg')}
+        source={require('../../assets/images/logo.jpg')}
         style={styles.image}
       />
       <Text
@@ -27,7 +27,7 @@ function LoadingPage() {
       </Text>
       <View style={styles.baseText}>
         <Image
-          source={require('./assets/images/cbn-logo.png')}
+          source={require('../../assets/images/cbn-logo.png')}
           style={styles.smallImage}
         />
         <Text
