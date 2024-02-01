@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 
 export default function Home() {
+  const [isVisible, setVisible] = useState(true);
+  const toggleVisibility = () => {
+    setVisible(!isVisible);
+  }
   return (
     <View>
       <View style={styles.container}>
@@ -12,7 +16,7 @@ export default function Home() {
           <Text style={{color: 'black'}}>Hi, Paul</Text>
         </View>
         <View style={[styles.subContainer, {width: 140}]}>
-          <Icon name="headphones" size={30} color="#000" />
+          <Icon name="headset-mic" size={30} color="#000" />
           <Icon name="flip" size={30} color="#000" />
           <Icon name="notifications" size={30} color="#000" />
         </View>
@@ -38,7 +42,16 @@ export default function Home() {
               <Text style={{paddingHorizontal: 4, color: 'white'}}>
                 Available Balance
               </Text>
-              <Icon name="visibility" size={15} color="white" />
+              <TouchableOpacity
+                onPress={toggleVisibility}
+                activeOpacity={0.1}
+                style={{padding: 3, borderRadius: 2, }}>
+                {isVisible ? (
+                  <Icon name="visibility" size={15} color="white" />
+                ) : (
+                  <Icon name="visibility-off" size={15} color="white" />
+                )}
+              </TouchableOpacity>
             </View>
             <View
               style={{
@@ -53,9 +66,22 @@ export default function Home() {
             </View>
           </View>
           <View style={styles.balance}>
-            <View style={{display: 'flex', flexDirection: 'row', alignItems: "baseline"}}>
-              <Icon name="currency-pound" color="white" size={15}/>
-              <Text style={{color: 'white', fontSize: 30}}>10,000.00</Text>
+            <View>
+              {isVisible ? (
+                <View
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'baseline',
+                  }}>
+                  <Icon name="currency-pound" color="white" size={15} />
+                  <Text style={{color: 'white', fontSize: 30}}>10,000.00</Text>
+                </View>
+              ) : (
+                <Text style={{fontSize: 30, color: 'white', marginLeft: 10}}>
+                  ****
+                </Text>
+              )}
             </View>
             <TouchableOpacity style={styles.addMoney} activeOpacity={0.9}>
               <View>
@@ -103,5 +129,4 @@ const styles = StyleSheet.create({
     marginTop: 15,
     color: "black",
   }
-
 })
