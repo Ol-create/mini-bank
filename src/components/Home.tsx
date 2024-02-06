@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Home() {
   const [isVisible, setVisible] = useState(true);
   const toggleVisibility = () => {
     setVisible(!isVisible);
-  }
+  };
   return (
-    <View>
+    <View style={styles.outterContainer}>
       <View style={styles.container}>
         <View style={[styles.subContainer, {width: 90}]}>
           <Icon name="person" size={30} color="green" />
@@ -45,7 +44,7 @@ export default function Home() {
               <TouchableOpacity
                 onPress={toggleVisibility}
                 activeOpacity={0.1}
-                style={{padding: 3, borderRadius: 2, }}>
+                style={{padding: 3, borderRadius: 2}}>
                 {isVisible ? (
                   <Icon name="visibility" size={15} color="white" />
                 ) : (
@@ -83,7 +82,7 @@ export default function Home() {
                 </Text>
               )}
             </View>
-            <TouchableOpacity style={styles.addMoney} activeOpacity={0.9}>
+            <TouchableOpacity style={styles.addMoney} activeOpacity={0.7}>
               <View>
                 <Text style={{color: 'green', textAlign: 'center'}}>
                   + Add Money
@@ -92,41 +91,167 @@ export default function Home() {
             </TouchableOpacity>
           </View>
         </View>
+        {/* To Opay */}
+      </View>
+      <View style={styles.toPay}>
+        <View style={styles.flexVertical}>
+          <Icon style={styles.iconStyle} name="account-box" size={20} />
+          <Text>To Opay</Text>
+        </View>
+        <View>
+          <Icon name="account-balance" size={20} />
+          <Text>To Bank</Text>
+        </View>
+        <View>
+          <Icon name="money" size={20} />
+          <Text>Withdraw</Text>
+        </View>
+      </View>
+      {/* Buy Airtime */}
+      <View>
+        <View style={styles.toPay}>
+          <View style={styles.flexVertical}>
+            <Icon style={styles.iconStyle} name="account-box" size={20} />
+            <Text>To Opay</Text>
+          </View>
+          <View>
+            <Icon name="account-balance" size={20} />
+            <Text>To Bank</Text>
+          </View>
+          <View>
+            <Icon name="money" size={20} />
+            <Text>Withdraw</Text>
+          </View>
+        </View>
+        <View style={styles.toPay}>
+          <View style={styles.flexVertical}>
+            <Icon style={styles.iconStyle} name="account-box" size={20} />
+            <Text>To Opay</Text>
+          </View>
+          <View>
+            <Icon name="account-balance" size={20} />
+            <Text>To Bank</Text>
+          </View>
+          <View>
+            <Icon name="money" size={20} />
+            <Text>Withdraw</Text>
+          </View>
+        </View>
+      </View>
+      {/* Footer */}
+      <View style={[styles.footer]}>
+        <View style={styles.flexVertical}>
+          <Icon
+            style={[styles.footerIcon, {color: 'green'}]}
+            name="account-box"
+            size={20}
+          />
+          <Text
+            style={[
+              styles.footerIconText,
+              {color: 'green', fontWeight: 'bold'},
+            ]}>
+            Home
+          </Text>
+        </View>
+        <View style={styles.flexVertical}>
+          <Icon name="stars" size={20} />
+          <Text style={styles.footerIconText}>Rewards</Text>
+        </View>
+        <View style={styles.flexVertical}>
+          <Icon name="credit-score" size={20} />
+          <Text style={styles.footerIconText}>Finance</Text>
+        </View>
+        <View style={styles.flexVertical}>
+          <Icon name="credit-card" size={20} />
+          <Text style={styles.footerIconText}>Cards</Text>
+        </View>
+        <View style={styles.flexVertical}>
+          <Icon name="account-circle" size={20} />
+          <Text style={styles.footerIconText}>Me</Text>
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  outterContainer: {flex: 1},
   addMoney: {
-    backgroundColor: "white",
-    color: "green",
+    backgroundColor: 'white',
+    color: 'green',
     paddingVertical: 10,
     paddingHorizontal: 5,
     width: 110,
-    borderRadius: 20
+    borderRadius: 20,
   },
   container: {
     marginHorizontal: 12,
     marginTop: 15,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
   subContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   balance: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginHorizontal: 15,
     marginTop: 15,
-    color: "black",
-  }
-})
+    color: 'black',
+  },
+  toPay: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 15,
+    paddingVertical: 20,
+    backgroundColor: '#ffffef',
+    elevation: 30,
+    marginHorizontal: 12,
+    borderRadius: 12,
+    borderWidth: 4,
+    borderColor: 'white',
+  },
+  flexVertical: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  iconStyle: {
+    backgroundColor: 'lightgrey',
+    borderRadius: 6,
+    padding: 10,
+    color: 'green',
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 50,
+    backgroundColor: '#ffffef',
+    elevation: 40,
+    borderWidth: 4,
+    borderColor: 'white',
+  },
+  footerIcon: {
+    color: 'grey',
+  },
+  footerIconText: {
+    fontSize: 12,
+    color: 'grey',
+  },
+});
