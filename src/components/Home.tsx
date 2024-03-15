@@ -96,48 +96,80 @@ export default function Home() {
       <View style={styles.toPay}>
         <View style={styles.flexVertical}>
           <Icon style={styles.iconStyle} name="account-box" size={20} />
-          <Text>To Opay</Text>
+          <Text style={[styles.iconTextBold, styles.iconTextColor]}>
+            To Opay
+          </Text>
         </View>
-        <View>
-          <Icon name="account-balance" size={20} />
-          <Text>To Bank</Text>
+        <View style={styles.flexVertical}>
+          <Icon style={styles.iconStyle} name="account-balance" size={20} />
+          <Text style={[styles.iconTextBold, styles.iconTextColor]}>
+            To Bank
+          </Text>
         </View>
-        <View>
-          <Icon name="money" size={20} />
-          <Text>Withdraw</Text>
+        <View style={styles.flexVertical}>
+          <Icon style={styles.iconStyle} name="money" size={20} />
+          <Text style={[styles.iconTextBold, styles.iconTextColor]}>
+            Withdraw
+          </Text>
         </View>
       </View>
       {/* Buy Airtime */}
-      <View>
-        <View style={styles.toPay}>
+      <View style={styles.airtime}>
+        <View style={styles.flexHonrizontal}>
           <View style={styles.flexVertical}>
-            <Icon style={styles.iconStyle} name="account-box" size={20} />
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="account-box"
+              size={20}
+            />
             <Text>To Opay</Text>
           </View>
-          <View>
-            <Icon name="account-balance" size={20} />
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="account-balance"
+              size={20}
+            />
             <Text>To Bank</Text>
           </View>
-          <View>
-            <Icon name="money" size={20} />
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="money"
+              size={20}
+            />
             <Text>Withdraw</Text>
           </View>
         </View>
-        <View style={styles.toPay}>
+        <View style={styles.flexHonrizontal}>
           <View style={styles.flexVertical}>
-            <Icon style={styles.iconStyle} name="account-box" size={20} />
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="account-box"
+              size={20}
+            />
             <Text>To Opay</Text>
           </View>
-          <View>
-            <Icon name="account-balance" size={20} />
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="account-balance"
+              size={20}
+            />
             <Text>To Bank</Text>
           </View>
-          <View>
-            <Icon name="money" size={20} />
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="money"
+              size={20}
+            />
             <Text>Withdraw</Text>
           </View>
         </View>
       </View>
+      {/* Advert: Get your Vouchers */}
+      <View style={styles.voucher}></View>
       {/* Footer */}
       <View style={[styles.footer]}>
         <View style={styles.flexVertical}>
@@ -199,6 +231,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  voucher: {
+    height: 100,
+    marginHorizontal: 12,
+    borderRadius: 12,
+    backgroundColor: 'transparent',
+    // backgroundImage: 'linear-gradient(180deg, light-green, light-green, light-yellow)',
+  },
   balance: {
     display: 'flex',
     flexDirection: 'row',
@@ -220,6 +259,27 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: 'white',
   },
+  airtime: {
+    height: 166,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginTop: 15,
+    backgroundColor: '#ffffef',
+    paddingVertical: 12,
+    elevation: 30,
+    marginHorizontal: 12,
+    borderRadius: 12,
+    borderWidth: 4,
+    borderColor: 'white',
+  },
+  flexHonrizontal: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 15,
+    alignItems: 'center',
+  },
   flexVertical: {
     display: 'flex',
     flexDirection: 'column',
@@ -227,9 +287,15 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     backgroundColor: 'lightgrey',
-    borderRadius: 6,
+    borderRadius: 10,
     padding: 10,
     color: 'green',
+  },
+  iconTextBold: {
+    fontWeight: 'bold',
+  },
+  iconTextColor: {
+    color: 'black',
   },
   footer: {
     display: 'flex',
