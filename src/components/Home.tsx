@@ -127,7 +127,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="account-balance"
+              name="cell-tower"
               size={20}
             />
             <Text>Data</Text>
@@ -135,7 +135,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="money"
+              name="sports-soccer"
               size={20}
             />
             <Text>Betting</Text>
@@ -143,7 +143,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="money"
+              name="live-tv"
               size={20}
             />
             <Text>TV</Text>
@@ -153,7 +153,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="account-box"
+              name="savings"
               size={20}
             />
             <Text>OWealth</Text>
@@ -161,7 +161,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="account-balance"
+              name="soap"
               size={20}
             />
             <Text>Loan</Text>
@@ -169,7 +169,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="money"
+              name="real-estate-agent"
               size={20}
             />
             <Text>Play4aChild</Text>
@@ -177,7 +177,7 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="money"
+              name="group-add"
               size={20}
             />
             <Text>More</Text>
