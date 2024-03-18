@@ -119,10 +119,10 @@ export default function Home() {
           <View style={styles.flexVertical}>
             <Icon
               style={[styles.iconStyle, {borderRadius: 20}]}
-              name="account-box"
+              name="phone-iphone"
               size={20}
             />
-            <Text>To Opay</Text>
+            <Text>Airtime</Text>
           </View>
           <View style={styles.flexVertical}>
             <Icon
@@ -130,7 +130,7 @@ export default function Home() {
               name="account-balance"
               size={20}
             />
-            <Text>To Bank</Text>
+            <Text>Data</Text>
           </View>
           <View style={styles.flexVertical}>
             <Icon
@@ -138,7 +138,15 @@ export default function Home() {
               name="money"
               size={20}
             />
-            <Text>Withdraw</Text>
+            <Text>Betting</Text>
+          </View>
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="money"
+              size={20}
+            />
+            <Text>TV</Text>
           </View>
         </View>
         <View style={styles.flexHonrizontal}>
@@ -148,7 +156,7 @@ export default function Home() {
               name="account-box"
               size={20}
             />
-            <Text>To Opay</Text>
+            <Text>OWealth</Text>
           </View>
           <View style={styles.flexVertical}>
             <Icon
@@ -156,7 +164,7 @@ export default function Home() {
               name="account-balance"
               size={20}
             />
-            <Text>To Bank</Text>
+            <Text>Loan</Text>
           </View>
           <View style={styles.flexVertical}>
             <Icon
@@ -164,12 +172,24 @@ export default function Home() {
               name="money"
               size={20}
             />
-            <Text>Withdraw</Text>
+            <Text>Play4aChild</Text>
+          </View>
+          <View style={styles.flexVertical}>
+            <Icon
+              style={[styles.iconStyle, {borderRadius: 20}]}
+              name="money"
+              size={20}
+            />
+            <Text>More</Text>
           </View>
         </View>
       </View>
       {/* Advert: Get your Vouchers */}
-      <View style={styles.voucher}></View>
+      <View style={styles.voucher}>
+        {/* <Text>
+          TEXT  
+        </Text> */}
+      </View>
       {/* Footer */}
       <View style={[styles.footer]}>
         <View style={styles.flexVertical}>
